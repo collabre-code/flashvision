@@ -15,6 +15,8 @@
             }
         </style>
     <body>
+
+\\        
 <?php
 $serverName = "collabserver.database.windows.net";
 $connectionOptions = array(
@@ -40,7 +42,7 @@ exit;
 $array = sqlsrv_fetch_array(
 $result);
 ?>
-
+\\
 
 
 
