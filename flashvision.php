@@ -16,33 +16,9 @@
         </style>
     <body>
 
-\\        
-<?php
-$serverName = "collabserver.database.windows.net";
-$connectionOptions = array(
-"Database" => "collabDataBase",
-"UID" => "collabuser",
-"PWD" => "YTc@3364"
-);  
-$conn = sqlsrv_connect($serverName, $connectionOptions);
-if ($conn === false) {
-die(print_r(sqlsrv_errors(), true));
-}
-echo "Connected successfully";
+       
 
-// Query
 
-$sql = "SELECT timeDelta FROM FlashVisionStatus";
-$result = sqlsrv_query($conn,$sql);
-if ($result === false) {
-echo "error (sqlsrv_query): ".print_r(sqlsrv_errors(), true);
-exit;
-}
-
-$array = sqlsrv_fetch_array(
-$result);
-?>
-\\
 
 
 
@@ -70,6 +46,33 @@ $result);
 
 if (sqlsrv_has_rows($array)) {
 while ($row = sqlsrv_fetch_array($array, SQLSRV_FETCH_ASSOC)) {
+    
+    
+<?php
+$serverName = "collabserver.database.windows.net";
+$connectionOptions = array(
+"Database" => "collabDataBase",
+"UID" => "collabuser",
+"PWD" => "YTc@3364"
+);  
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+if ($conn === false) {
+die(print_r(sqlsrv_errors(), true));
+}
+echo "Connected successfully";
+
+// Query
+
+$sql = "SELECT timeDelta FROM FlashVisionStatus";
+$result = sqlsrv_query($conn,$sql);
+if ($result === false) {
+echo "error (sqlsrv_query): ".print_r(sqlsrv_errors(), true);
+exit;
+}
+
+$array = sqlsrv_fetch_array(
+$result);
+?>
 
 
 <tr>
