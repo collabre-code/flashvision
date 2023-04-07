@@ -1,6 +1,0 @@
-beautifulsoup4
-chromedriver
-pandas
-selenium
-numpy
-lxml
